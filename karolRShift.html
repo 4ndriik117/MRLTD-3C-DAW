@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Array Shift en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Array Shift en JavaScript</h1>
+    <button id="shiftButton">Eliminar primer elemento</button>
+    
+    <div class="output">
+        <p>Array original: <span id="originalArray"></span></p>
+        <p>Elemento eliminado: <span id="removedElement"></span></p>
+        <p>Array después de usar shift: <span id="shiftedArray"></span></p>
+    </div>
+    
+    <script>
+        // Crear un array de ejemplo
+        let frutas = ["Manzana", "Banana", "Cereza", "Durazno"];
+        
+        // Función para actualizar el contenido de la página
+        function actualizarContenido() {
+            document.getElementById('originalArray').textContent = frutas.join(", ");
+            document.getElementById('removedElement').textContent = "";
+            document.getElementById('shiftedArray').textContent = "";
+        }
+        
+        // Inicializar el contenido de la página
+        actualizarContenido();
+        
+        // Agregar evento al botón
+        document.getElementById('shiftButton').addEventListener('click', function() {
+            // Usar el método shift para eliminar el primer elemento
+            let primerFruta = frutas.shift();
+            
+            // Actualizar el contenido de la página
+            document.getElementById('originalArray').textContent = frutas.join(", ");
+            document.getElementById('removedElement').textContent = primerFruta;
+            document.getElementById('shiftedArray').textContent = frutas.join(", ");
+        });
+    </script>
+</body>
+</html>
