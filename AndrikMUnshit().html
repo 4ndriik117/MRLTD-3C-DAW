@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de unshift() en JavaScript</title>
+    <script>
+        let elementos = ['Elemento 1', 'Elemento 2', 'Elemento 3'];
+
+        function actualizarLista() {
+            const lista = document.getElementById('lista');
+            lista.innerHTML = '';
+            elementos.forEach(elemento => {
+                const li = document.createElement('li');
+                li.textContent = elemento;
+                lista.appendChild(li);
+            });
+        }
+
+        function añadirElemento() {
+            elementos.unshift('Nuevo Elemento');
+            actualizarLista();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            actualizarLista();
+        });
+    </script>
+</head>
+<body>
+    <h1>Lista de Elementos</h1>
+    <ul id="lista"></ul>
+    <button onclick="añadirElemento()">Añadir Elemento al Principio</button>
+</body>
+</html>
