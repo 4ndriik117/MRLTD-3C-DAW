@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Array push en JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Array <code>push</code> en JavaScript</h1>
+    <pre id="resultado"></pre>
+    
+    <script>
+        // Declaramos un arreglo inicial con algunas frutas
+        let frutas = ["manzana", "banana", "pera"];
+        
+        // Crear una función para mostrar el contenido del arreglo en el elemento HTML
+        function mostrarArreglo(mensaje, arreglo) {
+            // Obtener el elemento con el ID 'resultado'
+            let resultado = document.getElementById('resultado');
+            // Agregar el mensaje y el contenido del arreglo al elemento 'resultado'
+            resultado.innerHTML += mensaje + JSON.stringify(arreglo) + '\n';
+        }
+
+        // Imprimimos el arreglo original
+        mostrarArreglo("Arreglo original: ", frutas);
+
+        // Usamos el método push para agregar una nueva fruta al arreglo
+        frutas.push("naranja");
+        // Imprimimos el arreglo después de agregar 'naranja'
+        mostrarArreglo("Después de agregar 'naranja': ", frutas);
+
+        // Usamos el método push nuevamente para agregar varias frutas al mismo tiempo
+        frutas.push("fresa", "uva");
+        // Imprimimos el arreglo después de agregar 'fresa' y 'uva'
+        mostrarArreglo("Después de agregar 'fresa' y 'uva': ", frutas);
+    </script>
+</body>
+</html>
